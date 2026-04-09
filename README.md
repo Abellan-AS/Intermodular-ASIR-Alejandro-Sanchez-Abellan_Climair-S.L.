@@ -27,14 +27,19 @@ Estrategia de migración y despliegue en **Amazon Web Services (AWS)**.
 * **Viabilidad:** Análisis de costes (TCO) optimizado bajo el modelo *Free Tier*.
 
 ### 🖥️ [FUHAR] Fundamentos de Hardware
-Especificaciones técnicas de los activos físicos de la empresa.
-* **Servidores:** Selección de arquitectura x86_64 con redundancia **RAID** para asegurar la integridad física de los datos.
-* **Continuidad:** Protección eléctrica mediante Sistemas de Alimentación Ininterrumpida (**SAI**).
+Infraestructura física y redundancia para la continuidad de negocio.
+* **Equipamiento:** 2 Servidores críticos (CPM), 2 estaciones de desarrollo, 3 de administración y 10 para formación.
+* **Redundancia RAID:** * **RAID 1 (Mirror):** En estaciones de desarrollo para proteger el código local.
+* **RAID 6 (Doble Paridad):** En servidores CPM, permitiendo el fallo de hasta 2 discos sin pérdida de datos.
+* **Despliegue:** Estandarización mediante imágenes maestras (**Sysprep**) y clonación masiva con **Clonezilla**
 
 ### 🌐 [Redes] Planificación y Administración de Redes
-Diseño de la conectividad local y remota.
-* **Segmentación:** Organización de la red mediante **VLANs** y direccionamiento **IPv4/VLSM**.
-* **Seguridad:** Topología en estrella con dispositivos gestionables y políticas de filtrado.
+Diseño de red jerárquica segmentada para una estructura de dos plantas.
+* **Topología:** Estrella extendida con enrutamiento **Router-on-a-Stick** (Gig0/0 y Gig0/1).
+* **Segmentación (VLANs):** * **V10/V20:** Administración y Dirección (Planta Baja).
+    * **V30/V40/V50:** Desarrollo, Soporte y Formación (1ª Planta).
+    * **V60:** Servidores (CPD) | **V99:** Gestión y WiFi.
+* **Seguridad:** Implementación de **ACLs** para restricción de tráfico inter-VLAN y acceso VTY restringido a la VLAN de Gestión.
 
 ### 📋 [Lenguaje_Marcas] Lenguajes de Marcas
 Modelado y visualización de la información operativa.
