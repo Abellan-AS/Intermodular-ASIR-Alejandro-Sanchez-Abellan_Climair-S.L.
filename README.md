@@ -16,7 +16,7 @@ Corazón del sistema basado en **Ubuntu Server 24.04 LTS**.
 * **Automatización:** Scripts en Bash para backups automáticos programados mediante Cron.
 
 ### 🗄️ [BBDD] Bases de Datos
-Gestión de la persistencia de datos mediante **MySQL/MariaDB**.
+Gestión de la persistencia de datos mediante **MySQL**.
 * **Modelo Relacional:** Diseño normalizado (3FN) para la gestión de técnicos, clientes e intervenciones.
 * **Seguridad DCL:** Implementación de roles (Administración/Técnicos) bajo el principio de mínimo privilegio.
 
