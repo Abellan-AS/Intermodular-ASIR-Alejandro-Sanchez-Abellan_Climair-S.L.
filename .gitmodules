@@ -1,3 +1,18 @@
 [submodule "ISO"]
 	path = ISO
 	url = https://github.com/Abellan-AS/IntermodularASIR-ClimAir-ISO
+[submodule "Cloud"]
+	path = Cloud
+	url = https://github.com/Abellan-AS/IntermodularASIR-ClimAir-Cloud
+[submodule "BBDD"]
+	path = BBDD
+	url = https://github.com/Abellan-AS/Intermodular-ASIR-BBDD
+[submodule "Lenguaje_Marcas"]
+	path = Lenguaje_Marcas
+	url = https://github.com/Abellan-AS/IntermodularASIR-ClimAir-Lenguaje_Marcas
+[submodule "Redes"]
+	path = Redes
+	url = https://github.com/Abellan-AS/IntermodularASIR-ClimAir-Redes
+[submodule "FUHAR"]
+	path = FUHAR
+	url = https://github.com/Abellan-AS/IntermodularASIR-ClimAir-FUHAR
