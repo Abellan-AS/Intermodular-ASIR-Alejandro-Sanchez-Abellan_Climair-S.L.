@@ -8,14 +8,14 @@ Este repositorio contiene la arquitectura tecnológica completa de **ClimAir S.L
 
 ---
 
-## 📌 Visión General
+##  Visión General
 ClimAir S.L. nace de la necesidad de modernizar la operativa de una empresa de servicios técnicos. La infraestructura está diseñada para conectar de forma segura la oficina administrativa con los técnicos desplazados en campo, garantizando la **integridad de los datos** y la **continuidad del negocio**.
 
 ---
 
-## 🏗️ Pilares del Proyecto
+##  Pilares del Proyecto
 
-### 1. Infraestructura y Sistemas (Core)
+### 1. Infraestructura y Sistemas
 El corazón del proyecto es un servidor **Ubuntu 24.04 LTS** diseñado para ser eficiente y escalable:
 * **Almacenamiento Inteligente:** Implementación de **LVM** para gestionar el crecimiento de datos en caliente.
 * **Interoperabilidad:** Servidor de archivos **Samba** para integración transparente con clientes Windows 11.
@@ -38,7 +38,7 @@ Migración estratégica a la nube de **Amazon Web Services (AWS)**:
 
 ---
 
-## 🛡️ Seguridad y Hardening
+##  Seguridad y Hardening
 La seguridad no es un módulo, es la base de todo el despliegue:
 * **Blindaje SSH:** Acceso remoto endurecido y limitado.
 * **Firewall Perimetral:** Configuración de **UFW** y **Security Groups** bajo política de denegación total por defecto.
@@ -46,11 +46,4 @@ La seguridad no es un módulo, es la base de todo el despliegue:
 
 ---
 
-## 📂 Estructura del Proyecto
-```bash
-.
-├── /systems        # Configuraciones de SO, Scripts y Samba
-├── /database       # Modelo E/R y Scripts SQL
-├── /web-interface  # Dashboard y modelado de datos (JSON/XML)
-├── /docs           # Documentación técnica y estrategia Cloud
-└── README.md       # Guía global (este archivo)
+
