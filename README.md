@@ -1,49 +1,63 @@
-# ❄️ ClimAir S.L. - Sistema Integral de Gestión de Climatización
-
+# ❄️ ClimAir S.L. - Proyecto Intermodular ASIR
 ![Status](https://img.shields.io/badge/Status-Desplegado-green)
 ![OS](https://img.shields.io/badge/OS-Ubuntu_24.04_LTS-orange)
 ![Cloud](https://img.shields.io/badge/Cloud-AWS-blue)
 
-Este repositorio contiene la arquitectura tecnológica completa de **ClimAir S.L.**, una PYME dedicada al sector de la climatización. El proyecto integra administración de sistemas, seguridad avanzada, gestión de datos relacionales y despliegue en la nube para ofrecer una solución operativa 24/7.
+Este repositorio centraliza la infraestructura tecnológica completa de **ClimAir S.L.**, una PYME del sector de climatización. El proyecto demuestra la capacidad de integrar sistemas operativos, bases de datos, redes, hardware y soluciones en la nube en un entorno empresarial real y seguro.
 
 ---
 
-##  Visión General
-ClimAir S.L. nace de la necesidad de modernizar la operativa de una empresa de servicios técnicos. La infraestructura está diseñada para conectar de forma segura la oficina administrativa con los técnicos desplazados en campo, garantizando la **integridad de los datos** y la **continuidad del negocio**.
+## 🏗️ Estructura del Proyecto
+
+### 🐧 [ISO] Implantación de Sistemas Operativos
+Corazón del sistema basado en **Ubuntu Server 24.04 LTS**.
+* **Almacenamiento:** Configuración de volúmenes elásticos mediante **LVM**.
+* **Seguridad:** Hardening de SSH, configuración de **Samba** para interoperabilidad y gestión de permisos granulares.
+* **Automatización:** Scripts en Bash para backups automáticos programados mediante Cron.
+
+### 🗄️ [BBDD] Bases de Datos
+Gestión de la persistencia de datos mediante **MySQL/MariaDB**.
+* **Modelo Relacional:** Diseño normalizado (3FN) para la gestión de técnicos, clientes e intervenciones.
+* **Seguridad DCL:** Implementación de roles (Administración/Técnicos) bajo el principio de mínimo privilegio.
+
+### ☁️ [Cloud] Computación en la Nube
+Estrategia de migración y despliegue en **Amazon Web Services (AWS)**.
+* **Infraestructura:** Uso de instancias **EC2**, almacenamiento **EBS** y bases de datos gestionadas **RDS**.
+* **Networking & Identity:** Aislamiento en **VPC** y control de accesos mediante **IAM**.
+* **Viabilidad:** Análisis de costes (TCO) optimizado bajo el modelo *Free Tier*.
+
+### 🖥️ [FUHAR] Fundamentos de Hardware
+Especificaciones técnicas de los activos físicos de la empresa.
+* **Servidores:** Selección de arquitectura x86_64 con redundancia **RAID** para asegurar la integridad física de los datos.
+* **Continuidad:** Protección eléctrica mediante Sistemas de Alimentación Ininterrumpida (**SAI**).
+
+### 🌐 [Redes] Planificación y Administración de Redes
+Diseño de la conectividad local y remota.
+* **Segmentación:** Organización de la red mediante **VLANs** y direccionamiento **IPv4/VLSM**.
+* **Seguridad:** Topología en estrella con dispositivos gestionables y políticas de filtrado.
+
+### 📋 [Lenguaje_Marcas] Lenguajes de Marcas
+Modelado y visualización de la información operativa.
+* **Intercambio de Datos:** Estructuras en **JSON y XML** validadas mediante DTD.
+* **Dashboard:** Interfaz de monitorización técnica desarrollada en **HTML5/CSS3**.
 
 ---
 
-##  Pilares del Proyecto
+## 📂 Organización del Repositorio
+Siguiendo la estructura mostrada en la raíz del proyecto:
 
-### 1. Infraestructura y Sistemas
-El corazón del proyecto es un servidor **Ubuntu 24.04 LTS** diseñado para ser eficiente y escalable:
-* **Almacenamiento Inteligente:** Implementación de **LVM** para gestionar el crecimiento de datos en caliente.
-* **Interoperabilidad:** Servidor de archivos **Samba** para integración transparente con clientes Windows 11.
-* **Automatización:** Sistema de copias de seguridad automáticas (Bash + Cron) con rotación y auditoría de logs.
-
-### 2. Gestión de Datos y Persistencia
-Centralización de la información mediante un modelo relacional robusto en **MySQL**:
-* **Arquitectura de Datos:** Diseño normalizado (3FN) que gestiona técnicos, clientes, intervenciones y facturación.
-* **Seguridad de Datos (DCL):** Control de acceso granular; los usuarios solo acceden a la información necesaria para su rol (Principio de Mínimo Privilegio).
-
-### 3. Visualización y Flujo de Información
-Modelado de datos para la monitorización en tiempo real:
-* **Intercambio de Datos:** Uso de estándares **JSON y XML** para la comunicación entre dispositivos.
-* **Dashboard Operativo:** Interfaz web de alto contraste (Cyberpunk Style) para el seguimiento visual del estado de los partes de trabajo.
-
-### 4. Estrategia Cloud y Escalabilidad
-Migración estratégica a la nube de **Amazon Web Services (AWS)**:
-* **Alta Disponibilidad:** Despliegue mediante instancias **EC2** y bases de datos gestionadas **RDS**.
-* **Red y Seguridad:** Aislamiento de recursos en una **VPC** privada y gestión de identidades mediante **IAM**.
+* `/BBDD`: Scripts SQL de creación, inserción y consultas.
+* `/Cloud`: Documentación de arquitectura AWS y estimación de costes.
+* `/FUHAR`: Especificaciones de hardware y redundancia física.
+* `/ISO`: Configuraciones del servidor, scripts de backup y hardening.
+* `/Lenguaje_Marcas`: Dashboard web, archivos JSON y validaciones XML.
+* `/Redes`: Esquemas de red y direccionamiento IP.
 
 ---
 
-##  Seguridad y Hardening
-La seguridad no es un módulo, es la base de todo el despliegue:
-* **Blindaje SSH:** Acceso remoto endurecido y limitado.
-* **Firewall Perimetral:** Configuración de **UFW** y **Security Groups** bajo política de denegación total por defecto.
-* **Estándares:** Arquitectura alineada con los controles de la normativa **ISO/IEC 27001**.
+## 🛡️ Estándares de Seguridad
+Toda la infraestructura ha sido diseñada siguiendo las directrices de la **ISO/IEC 27001**, garantizando la Confidencialidad, Integridad y Disponibilidad de la información de ClimAir S.L.
 
 ---
-
-
+**Desarrollado por:** Alejandro Sánchez Abellán  
+**Curso:** 2025-2026 | Ciclo Formativo de Grado Superior ASIR
